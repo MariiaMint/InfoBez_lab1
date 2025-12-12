@@ -107,8 +107,7 @@
                 <version>12.1.0</version>
                 <configuration>
                     <failBuildOnCVSS>7</failBuildOnCVSS>
-                    <nvdDatafeedEnabled>false</nvdDatafeedEnabled>
-                    <autoUpdate>false</autoUpdate>
+                    <skipOssIndex>true</skipOssIndex>
                     <skipSystemScope>true</skipSystemScope>
                 </configuration>
             </plugin>
