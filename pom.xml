@@ -111,6 +111,7 @@
                 <version>12.1.0</version>
                 <configuration>
                     <failBuildOnCVSS>7</failBuildOnCVSS>
+                    <nvdApiKey>24c2210c-b427-4f5a-a565-602de89cc20c</nvdApiKey>
                 </configuration>
             </plugin>
 
