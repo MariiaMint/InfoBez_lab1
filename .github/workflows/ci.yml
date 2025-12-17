@@ -51,7 +51,7 @@ jobs:
             -DfailBuildOnCVSS=0 \
             -DsuppressionFile=dependency-check-suppressions.xml \
             -Dossindex.skip=true
-        continue-on-error: false
+        continue-on-error: fals
 
 
       # 7. Артефакт отчётов
