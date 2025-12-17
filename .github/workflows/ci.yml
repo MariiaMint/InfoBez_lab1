@@ -40,7 +40,19 @@ jobs:
 
       # 6. SCA: Dependency Check (проверка зависимостей)
       - name: Run OWASP Dependency-Check
-        run: mvn org.owasp:dependency-check-maven:check
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+        run: |
+          mkdir -p ./dependency-check-data
+          mvn -B org.owasp:dependency-check-maven:check \
+            -Dnvd.apiKey=$NVD_API_KEY \
+            -DdataDirectory=./dependency-check-data \
+            -Dformat=HTML \
+            -DfailBuildOnCVSS=0 \
+            -DsuppressionFile=dependency-check-suppressions.xml \
+            -Dossindex.skip=true
+        continue-on-error: false
+
 
       # 7. Артефакт отчётов
       - name: Upload reports
